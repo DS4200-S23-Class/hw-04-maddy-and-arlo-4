@@ -1,25 +1,31 @@
 // JS code for webpage interaction
 
 // Toggle the hovered class of a point
-function pointHovered() {
-    let point = document.getElementById("point");
+function pointHovered(point) {
     point.classList.toggle("hovered");
 }
 
 // Toggle the clicked class of a point and the visibility of its corresponding text
-function pointClicked() {
-    let point = document.getElementById("point");
+function pointClicked(point, pointText) {
     point.classList.toggle("clicked"); 
-    let text = document.getElementById("pointText");
-    text.classList.toggle("invisible");
+    pointText.classList.toggle("invisible"); //text not working
 }
 
-// Adding hover functionality
-document.getElementById("point")
-            .addEventListener("mouseover", pointHovered);
-document.getElementById("point")
-            .addEventListener("mouseout", pointHovered);
+// loop idea-> for i in range #of points, pointid="point"+str(i) pointtext="pointText"+str(i) then the following
+let points = document.getElementsByClassName("point");
 
-// Adding click functionality
-document.getElementById("point")
-            .addEventListener("click", pointClicked);
+    // Check is each input is check
+    for (let i = 1; i <= points.length; i++){
+
+            let pointID = "point" + i
+            let pointTextID = "pointText" + i
+
+            // Adding hover functionality - works
+            let point = document.getElementById(pointID)
+            let pointText = document.getElementById(pointTextID)
+            point.addEventListener("mouseover", function(){pointHovered(point)});
+            point.addEventListener("mouseout", function(){pointHovered(point)});
+
+            // Adding click functionality - border works, text does not
+            point.addEventListener("click", function(){pointClicked(point, pointTextID)});
+    }
