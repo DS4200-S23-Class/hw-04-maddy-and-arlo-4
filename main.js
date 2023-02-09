@@ -8,7 +8,6 @@ function pointHovered() {
 
 // Toggle the clicked class of a point and the visibility of its corresponding text
 function pointClicked() {
-    console.log("clicked")
     let point = document.getElementById("point");
     point.classList.toggle("clicked"); 
     let text = document.getElementById("pointText");
