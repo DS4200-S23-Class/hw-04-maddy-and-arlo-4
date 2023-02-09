@@ -1,0 +1,20 @@
+#pageHeader {
+    align-content: center;
+} /* doesnt work */
+
+body {
+    font-family: Arial;
+}
+
+.clicked {
+    stroke-width: 3px;
+    stroke: blueviolet;
+}
+
+.hovered {
+    fill: yellow
+}
+
+.invisible {
+    visibility: collapse;
+}
