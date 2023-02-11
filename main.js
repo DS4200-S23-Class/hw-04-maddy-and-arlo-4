@@ -8,24 +8,49 @@ function pointHovered(point) {
 // Toggle the clicked class of a point and the visibility of its corresponding text
 function pointClicked(point, pointText) {
     point.classList.toggle("clicked"); 
-    pointText.classList.toggle("invisible"); //text not working
+    let newText = "Last Point Clicked: " + pointText;
+    document.getElementById("selected_point").innerHTML = newText 
 }
 
-// loop idea-> for i in range #of points, pointid="point"+str(i) pointtext="pointText"+str(i) then the following
-let points = document.getElementsByClassName("point");
+function addUserPoint() {
+    let vals = document.getElementsByTagName("input");
 
-    // Check is each input is check
+        let x = vals[0].value * 50;
+        let y = 500 - (vals[1].value * 50);
+        console.log(x, y);
+
+       
+        let frame = document.getElementById("frame");
+        let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("cx", x);
+        circle.setAttribute("cy", y);
+        circle.setAttribute("r", 10);
+        frame.appendChild(circle);
+
+        // Add functionality? Maybe not necessary is points list includes this? -- HOVER FUNCTIONALITY STILL DOESNT WORK BUT CLICKED DOES
+        //circle.addEventListener("mouseover", function(){pointHovered(point)});
+        //circle.addEventListener("mouseout", function(){pointHovered(point)});
+
+        let pointText = "(" + x + ", " + y + ")"
+        circle.addEventListener("click", function(){pointClicked(circle, pointText)});
+    
+}
+
+// Add event listeners to each point
+let points = document.getElementsByClassName("point");
     for (let i = 1; i <= points.length; i++){
 
             let pointID = "point" + i
             let pointTextID = "pointText" + i
 
-            // Adding hover functionality - works
+            // Adding hover functionality
             let point = document.getElementById(pointID)
-            let pointText = document.getElementById(pointTextID)
+            let pointText = document.getElementById(pointTextID).textContent
             point.addEventListener("mouseover", function(){pointHovered(point)});
             point.addEventListener("mouseout", function(){pointHovered(point)});
 
-            // Adding click functionality - border works, text does not
-            point.addEventListener("click", function(){pointClicked(point, pointTextID)});
+            // Adding click functionality
+            point.addEventListener("click", function(){pointClicked(point, pointText)});
     }
+
+document.getElementById("subButton").addEventListener("click", addUserPoint)

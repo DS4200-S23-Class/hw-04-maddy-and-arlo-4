@@ -1,9 +1,14 @@
 #pageHeader {
-    align-content: center;
-} /* doesnt work */
+    text-align: center;
+}
 
 body {
     font-family: Arial;
+}
+
+#frame {
+    width: 500px;
+    height: 500px;
 }
 
 .clicked {

@@ -12,12 +12,36 @@
     <h1 id="pageHeader">hw-04: Event Handling</h1>
 
     <svg id="frame">
-        <circle cx="100" cy="100" r="10" id="point1" class="point"/>
-        <text x="300" y="100" id="pointText1" class="invisible" class="text">(100,100)</text>
-
-        <circle cx="200" cy="100" r="10" id="point2" class="point"/>
-        <text x="300" y="120" id="pointText2" class="invisible" class="text">(200,200)</text>
+        <circle cx="50" cy="400" r="10" id="point1" class="point"/>
+        <circle cx="100" cy="300" r="10" id="point2" class="point"/>
+        <circle cx="300" cy="400" r="10" id="point3" class="point"/>
+        <circle cx="450" cy="50" r="10" id="point4" class="point"/>
     </svg>
+
+    <div id="selected_point">
+        <!-- Placeholder where the selected point coordinates will appear -->
+    </div>
+
+    <p id="pointText1" class="invisible" class="text">(1,2)</p>
+    <p id="pointText2" class="invisible" class="text">(2,4)</p>
+    <p id="pointText3" class="invisible" class="text">(6,2)</p>
+    <p id="pointText4" class="invisible" class="text">(9,9)</p>
+
+    <div>
+        <!-- STILL DOESNT RESTRICT FROM 1-9 -->
+
+        <p>Want to add a new point?</p>
+
+        <form id="form-newPoint">
+            <input type="number" name="x" min="1" max="9"> X-Coordinate
+            <br>
+            <input type="number" name="y" min="1" max="9"/> Y-Coordinate
+        </form>
+
+        <button type="button" id="subButton">Add a new point!
+        </button>
+
+    </div>
 
     <script src="main.js"></script>   
 </body>
