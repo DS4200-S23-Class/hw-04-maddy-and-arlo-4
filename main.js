@@ -12,28 +12,26 @@ function pointClicked(point, pointText) {
     document.getElementById("selected_point").innerHTML = newText 
 }
 
+// Add point from user input
 function addUserPoint() {
     let vals = document.getElementsByTagName("input");
 
         let x = vals[0].value * 50;
         let y = 500 - (vals[1].value * 50);
-        console.log(x, y);
 
-       
+        // Create point in frame
         let frame = document.getElementById("frame");
-        let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        circle.setAttribute("cx", x);
-        circle.setAttribute("cy", y);
-        circle.setAttribute("r", 10);
-        frame.appendChild(circle);
-
-        // Add functionality? Maybe not necessary is points list includes this? -- HOVER FUNCTIONALITY STILL DOESNT WORK BUT CLICKED DOES
-        //circle.addEventListener("mouseover", function(){pointHovered(point)});
-        //circle.addEventListener("mouseout", function(){pointHovered(point)});
-
-        let pointText = "(" + x + ", " + y + ")"
-        circle.addEventListener("click", function(){pointClicked(circle, pointText)});
-    
+        let point = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        point.setAttribute("cx", x);
+        point.setAttribute("cy", y);
+        point.setAttribute("r", 10);
+        frame.appendChild(point);
+ 
+        // Add point functionality
+        point.addEventListener("mouseover", function(){pointHovered(point)});
+        point.addEventListener("mouseout", function(){pointHovered(point)});
+        let pointText = "(" + vals[0].value + ", " + vals[1].value + ")"
+        point.addEventListener("click", function(){pointClicked(point, pointText)}); 
 }
 
 // Add event listeners to each point
@@ -53,4 +51,5 @@ let points = document.getElementsByClassName("point");
             point.addEventListener("click", function(){pointClicked(point, pointText)});
     }
 
+// Add
 document.getElementById("subButton").addEventListener("click", addUserPoint)
