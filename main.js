@@ -9,7 +9,7 @@ function pointHovered(point) {
 function pointClicked(point, pointText) {
     point.classList.toggle("clicked"); 
     let newText = "Last Point Clicked: " + pointText;
-    document.getElementById("selected_point").innerHTML = newText 
+    document.getElementById("selected_point").innerHTML = newText;
 }
 
 // Add point from user input
@@ -46,7 +46,7 @@ let points = document.getElementsByClassName("point");
             let pointTextID = "pointText" + i
 
             // Adding hover functionality
-            let point = document.getElementById(pointID)
+            let point = document.getElementById(pointID);
             let pointText = document.getElementById(pointTextID).textContent
             point.addEventListener("mouseover", function(){pointHovered(point)});
             point.addEventListener("mouseout", function(){pointHovered(point)});
@@ -56,4 +56,4 @@ let points = document.getElementsByClassName("point");
     }
 
 // Add button functionality
-document.getElementById("subButton").addEventListener("click", addUserPoint)
+document.getElementById("subButton").addEventListener("click", addUserPoint);
