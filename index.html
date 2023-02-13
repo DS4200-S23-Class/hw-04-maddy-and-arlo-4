@@ -11,38 +11,75 @@
 <body>
     <h1 id="pageHeader">hw-04: Event Handling</h1>
 
-    <svg id="frame">
-        <circle cx="50" cy="400" r="10" id="point1" class="point"/>
-        <circle cx="100" cy="300" r="10" id="point2" class="point"/>
-        <circle cx="300" cy="400" r="10" id="point3" class="point"/>
-        <circle cx="450" cy="50" r="10" id="point4" class="point"/>
-    </svg>
+    <div class = "columnContainer">
+        <div class = "left">
+            <svg id="frame">
+                <line x1="0" y1="500" x2="500" y2="500" stroke="black" class="axis"/>
+                <line x1="0" y1="0" x2="0" y2="500" stroke="black" class="axis"/>
+                <circle cx="50" cy="400" r="10" id="point1" class="point"/>
+                <circle cx="100" cy="300" r="10" id="point2" class="point"/>
+                <circle cx="300" cy="400" r="10" id="point3" class="point"/>
+                <circle cx="450" cy="50" r="10" id="point4" class="point"/>  
+            </svg>
+        </div>
 
-    <div id="selected_point">
-        <!-- Placeholder where the selected point coordinates will appear -->
+        <div class = "right" >
+            <div id="selected_point">
+                <!-- Placeholder where the selected point coordinates will appear -->
+            </div>
+
+            <div>
+                <p>Want to add a new point?</p>
+                <select id="selectX">
+                    <option selected="">X-Coordinate</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                </select>
+                <br>
+                <select id="selectY">
+                    <option selected="">Y-Coordinate</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                </select>
+
+                <br>
+                <br>
+                <button type="button" id="subButton">Add a new point!
+                </button>
+            </div>
+
+            <div>
+                <p id="pointText1" class="invisible" class="text">(1,2)</p>
+                <p id="pointText2" class="invisible" class="text">(2,4)</p>
+                <p id="pointText3" class="invisible" class="text">(6,2)</p>
+                <p id="pointText4" class="invisible" class="text">(9,9)</p>
+            </div>
+        </div>
     </div>
 
+    <h3> Acknowledgements </h3>
     <div>
-        <p id="pointText1" class="invisible" class="text">(1,2)</p>
-        <p id="pointText2" class="invisible" class="text">(2,4)</p>
-        <p id="pointText3" class="invisible" class="text">(6,2)</p>
-        <p id="pointText4" class="invisible" class="text">(9,9)</p>
-    </div>
-
-    <div>
-        <!-- STILL DOESNT RESTRICT FROM 1-9 -->
-
-        <p>Want to add a new point?</p>
-
-        <form id="form-newPoint">
-            <input type="number" name="x" min="1" max="9"> X-Coordinate
-            <br>
-            <input type="number" name="y" min="1" max="9"/> Y-Coordinate
-        </form>
-
-        <button type="button" id="subButton">Add a new point!
-        </button>
-
+        <ul>
+            <li> https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line </li>
+            <li> http://www.java2s.com/example/javascript/dom-html-element/create-svg-element-and-make-circle.html </li>
+            <li> https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input </li>
+            <li> https://www.w3schools.com/howto/howto_js_toggle_class.asp </li>
+            <li> https://stackoverflow.com/questions/1085801/get-selected-value-in-dropdown-list-using-javascript </li>
+        </ul>
     </div>
 
     <script src="main.js"></script>   

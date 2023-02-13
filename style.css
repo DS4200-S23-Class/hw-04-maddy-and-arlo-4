@@ -6,14 +6,34 @@ body {
     font-family: Arial;
 }
 
+/* Creating Columns with Flexbox */
+.columnContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+  
+.right {
+    width: 40%;
+}
+
+.left {
+    width: 60%;
+
+}
+
 #frame {
     width: 500px;
     height: 500px;
 }
 
+.axis {
+    stroke-width: 5px;
+}
+
 .clicked {
     stroke-width: 3px;
-    stroke: blueviolet;
+    stroke: rgb(178, 123, 229);
 }
 
 .hovered {
@@ -23,3 +43,6 @@ body {
 .invisible {
     visibility: collapse;
 }
+
+h3 {text-align: center;}
+ul {text-align: center; list-style-position: inside; } 

@@ -14,24 +14,27 @@ function pointClicked(point, pointText) {
 
 // Add point from user input
 function addUserPoint() {
-    let vals = document.getElementsByTagName("input");
+    let x = document.getElementById("selectX").value;
+    let y = document.getElementById("selectY").value;
 
-        let x = vals[0].value * 50;
-        let y = 500 - (vals[1].value * 50);
+    if(x != "X-Coordinate" && y != "Y-Coordinate"){
+        let xPos = Number(x) * 50
+        let yPos = 500 - (Number(y) * 50)
 
         // Create point in frame
         let frame = document.getElementById("frame");
         let point = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        point.setAttribute("cx", x);
-        point.setAttribute("cy", y);
+        point.setAttribute("cx", xPos);
+        point.setAttribute("cy", yPos);
         point.setAttribute("r", 10);
         frame.appendChild(point);
- 
+    
         // Add point functionality
         point.addEventListener("mouseover", function(){pointHovered(point)});
         point.addEventListener("mouseout", function(){pointHovered(point)});
-        let pointText = "(" + vals[0].value + ", " + vals[1].value + ")"
+        let pointText = "(" + x + ", " + y + ")"
         point.addEventListener("click", function(){pointClicked(point, pointText)}); 
+    }
 }
 
 // Add event listeners to each point
@@ -51,5 +54,5 @@ let points = document.getElementsByClassName("point");
             point.addEventListener("click", function(){pointClicked(point, pointText)});
     }
 
-// Add
+// Add button functionality
 document.getElementById("subButton").addEventListener("click", addUserPoint)
