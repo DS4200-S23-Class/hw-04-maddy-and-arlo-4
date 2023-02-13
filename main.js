@@ -17,6 +17,7 @@ function addUserPoint() {
     let x = document.getElementById("selectX").value;
     let y = document.getElementById("selectY").value;
 
+    // Only adding the point if the user selects both x and y coordinates
     if(x != "X-Coordinate" && y != "Y-Coordinate"){
         let xPos = Number(x) * 50
         let yPos = 500 - (Number(y) * 50)

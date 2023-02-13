@@ -19,9 +19,9 @@ body {
 
 .left {
     width: 60%;
-
 }
 
+/* Setting Plot Structure */
 #frame {
     width: 500px;
     height: 500px;
@@ -31,6 +31,7 @@ body {
     stroke-width: 5px;
 }
 
+/* Classes for Toggling Points */
 .clicked {
     stroke-width: 3px;
     stroke: rgb(178, 123, 229);
@@ -44,5 +45,6 @@ body {
     visibility: collapse;
 }
 
+/* Formatting for Acknowledgements */
 h3 {text-align: center;}
 ul {text-align: center; list-style-position: inside; } 
